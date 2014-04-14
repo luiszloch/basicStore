@@ -5,17 +5,14 @@ import (
 	"fmt"
 	"github.com/revel/revel"
 	"io/ioutil"
+	//"strings"
 )
 
 type App struct {
 	*revel.Controller
 }
 
-type ProductList struct {
-	Products []Products
-}
-
-type Products struct {
+type Product struct {
 	Id          int
 	Img         string
 	Name        string
@@ -28,16 +25,16 @@ func (c App) Index() revel.Result {
 		fmt.Println(r)
 	}
 
-	var m ProductList
-	err := json.Unmarshal(b, &m)
+	var productList []Product
+	err := json.Unmarshal(b, &productList)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("error:", err)
 	}
 
-	fmt.Println(m.Products[0].Name)
+	fmt.Println(productList[0].Name)
 
 	greeting1 := "Aloha!"
 	greeting2 := " Bien-venido a Mexico!"
 
-	return c.Render(greeting1, greeting2, m)
+	return c.Render(greeting1, greeting2, productList)
 }
