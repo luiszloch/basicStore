@@ -1,0 +1,16 @@
+{	
+	"Products": [
+		{
+			"Id" : 1,
+			"Img": "public/img/placeholder_269x160.jpg",
+			"Name": "Creme para as Mãos",
+			"Description": "Creme Paris com resultados de Laser."
+		},
+		{
+			"Id" : 2,
+			"Img": "public/img/placeholder_269x160.jpg",
+			"Name": "Creme para os Pés",
+			"Description": "Creme Paris com resultados de Laser."
+		}
+	]
+}
